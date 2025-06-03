@@ -6,7 +6,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
 st.set_page_config(page_title="Psychometric Assessment Portal", layout="wide")
-
 st.title("🧠 Psychometric Assessment Portal")
 st.markdown("Please answer the following questions honestly.")
 
@@ -50,21 +49,25 @@ if st.button("Submit"):
 
     # Calculate scores per domain
     domain_scores = {}
+    domain_question_counts = {}
+
     for q in question_bank:
         qid = q["id"]
-        score = numeric_responses[qid] * q.get("weight", 1)
+        response_value = numeric_responses[qid]
         for domain in q["domains"]:
-            name = domain["name"]
+            dname = domain["name"]
             weight = domain.get("weight", 1)
-            domain_scores[name] = domain_scores.get(name, 0) + score * weight
+            domain_scores[dname] = domain_scores.get(dname, 0) + response_value * weight
+            domain_question_counts[dname] = domain_question_counts.get(dname, 0) + (5 * weight)  # max per question
 
-    # Normalize scores (optional)
-    max_score_per_domain = 5 * sum(
-        q.get("weight", 1) * d.get("weight", 1)
-        for q in question_bank
-        for d in q["domains"] if d["name"] == q["domains"][0]["name"]
-    )
-    normalized_scores = {k: round(v / max_score_per_domain * 100, 2) for k, v in domain_scores.items()}
+    # Normalize scores
+    normalized_scores = {}
+    for domain in domain_scores:
+        max_score = domain_question_counts[domain]
+        min_score = max_score / 5
+        raw = domain_scores[domain]
+        norm = ((raw - min_score) / (max_score - min_score)) * 100
+        normalized_scores[domain] = round(norm, 2)
 
     # Match career clusters
     matched_clusters = []
