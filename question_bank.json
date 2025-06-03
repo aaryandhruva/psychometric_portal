@@ -1,0 +1,866 @@
+[
+  {
+    "id": "Q001",
+    "text": "I enjoy working with tools, machines, or mechanical devices.",
+    "domains": [
+      {
+        "name": "RIASEC.Realistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q002",
+    "text": "I like repairing or building things with my hands.",
+    "domains": [
+      {
+        "name": "RIASEC.Realistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q003",
+    "text": "I prefer outdoor activities to sitting in a classroom.",
+    "domains": [
+      {
+        "name": "RIASEC.Realistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q004",
+    "text": "I feel energized when I use physical skills to solve a problem.",
+    "domains": [
+      {
+        "name": "RIASEC.Realistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q005",
+    "text": "I am interested in careers that involve fixing or constructing objects.",
+    "domains": [
+      {
+        "name": "RIASEC.Realistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q006",
+    "text": "I enjoy solving math or logic puzzles.",
+    "domains": [
+      {
+        "name": "RIASEC.Investigative",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q007",
+    "text": "I like understanding how systems or theories work.",
+    "domains": [
+      {
+        "name": "RIASEC.Investigative",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q008",
+    "text": "I prefer research and analysis over social activities.",
+    "domains": [
+      {
+        "name": "RIASEC.Investigative",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q009",
+    "text": "I am curious about scientific experiments and discoveries.",
+    "domains": [
+      {
+        "name": "RIASEC.Investigative",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q010",
+    "text": "I enjoy reading articles or books about new technologies.",
+    "domains": [
+      {
+        "name": "RIASEC.Investigative",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q011",
+    "text": "I love expressing myself through art, music, or writing.",
+    "domains": [
+      {
+        "name": "RIASEC.Artistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q012",
+    "text": "I feel most alive when I am creating something original.",
+    "domains": [
+      {
+        "name": "RIASEC.Artistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q013",
+    "text": "I am drawn to careers that let me use my imagination.",
+    "domains": [
+      {
+        "name": "RIASEC.Artistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q014",
+    "text": "I like working on projects without strict guidelines.",
+    "domains": [
+      {
+        "name": "RIASEC.Artistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q015",
+    "text": "I often think of creative solutions when facing a problem.",
+    "domains": [
+      {
+        "name": "RIASEC.Artistic",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q016",
+    "text": "I enjoy helping others solve their emotional or personal problems.",
+    "domains": [
+      {
+        "name": "RIASEC.Social",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q017",
+    "text": "I feel satisfied when I teach or mentor someone.",
+    "domains": [
+      {
+        "name": "RIASEC.Social",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q018",
+    "text": "I prefer group work to working alone.",
+    "domains": [
+      {
+        "name": "RIASEC.Social",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q019",
+    "text": "I am interested in careers like counseling or teaching.",
+    "domains": [
+      {
+        "name": "RIASEC.Social",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q020",
+    "text": "I easily empathize with others\u2019 feelings.",
+    "domains": [
+      {
+        "name": "RIASEC.Social",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q021",
+    "text": "I enjoy leading a team or organizing group activities.",
+    "domains": [
+      {
+        "name": "RIASEC.Enterprising",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q022",
+    "text": "I feel confident persuading others to follow my ideas.",
+    "domains": [
+      {
+        "name": "RIASEC.Enterprising",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q023",
+    "text": "I like exploring business or sales opportunities.",
+    "domains": [
+      {
+        "name": "RIASEC.Enterprising",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q024",
+    "text": "I prefer roles that involve risk-taking and initiative.",
+    "domains": [
+      {
+        "name": "RIASEC.Enterprising",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q025",
+    "text": "I am interested in managing projects or people.",
+    "domains": [
+      {
+        "name": "RIASEC.Enterprising",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q026",
+    "text": "I like working with data, numbers, or detailed records.",
+    "domains": [
+      {
+        "name": "RIASEC.Conventional",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q027",
+    "text": "I feel comfortable following established procedures.",
+    "domains": [
+      {
+        "name": "RIASEC.Conventional",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q028",
+    "text": "I enjoy organizing files, schedules, or inventories.",
+    "domains": [
+      {
+        "name": "RIASEC.Conventional",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q029",
+    "text": "I prefer tasks with clear, step-by-step instructions..",
+    "domains": [
+      {
+        "name": "RIASEC.Conventional",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q030",
+    "text": "I pay close attention to accuracy and detail.",
+    "domains": [
+      {
+        "name": "RIASEC.Conventional",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q031",
+    "text": "I am interested in new ideas and experiences.",
+    "domains": [
+      {
+        "name": "OCEAN.Openness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q032",
+    "text": "I enjoy thinking about abstract concepts.",
+    "domains": [
+      {
+        "name": "OCEAN.Openness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q033",
+    "text": "I like exploring artistic and cultural events.",
+    "domains": [
+      {
+        "name": "OCEAN.Openness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q034",
+    "text": "I often consider unconventional solutions.",
+    "domains": [
+      {
+        "name": "OCEAN.Openness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q035",
+    "text": "I am curious about different viewpoints.",
+    "domains": [
+      {
+        "name": "OCEAN.Openness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q036",
+    "text": "I always complete tasks on time.",
+    "domains": [
+      {
+        "name": "OCEAN.Conscientiousness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q037",
+    "text": "I keep my workspace neat and organized.",
+    "domains": [
+      {
+        "name": "OCEAN.Conscientiousness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q038",
+    "text": "I plan ahead rather than act spontaneously.",
+    "domains": [
+      {
+        "name": "OCEAN.Conscientiousness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q039",
+    "text": "I follow through on my commitments.",
+    "domains": [
+      {
+        "name": "OCEAN.Conscientiousness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q040",
+    "text": "I set clear goals and work steadily toward them.",
+    "domains": [
+      {
+        "name": "OCEAN.Conscientiousness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q041",
+    "text": "I feel energized when I spend time with others.",
+    "domains": [
+      {
+        "name": "OCEAN.Extraversion",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q042",
+    "text": "I enjoy being the center of attention.",
+    "domains": [
+      {
+        "name": "OCEAN.Extraversion",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q043",
+    "text": "I like meeting new people at social events.",
+    "domains": [
+      {
+        "name": "OCEAN.Extraversion",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q044",
+    "text": "I prefer group discussions to quiet reflection.",
+    "domains": [
+      {
+        "name": "OCEAN.Extraversion",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q045",
+    "text": "I speak up easily in a crowd.",
+    "domains": [
+      {
+        "name": "OCEAN.Extraversion",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q046",
+    "text": "I try to see everyone\u2019s side in a disagreement.",
+    "domains": [
+      {
+        "name": "OCEAN.Agreeableness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q047",
+    "text": "I am patient and tolerant of others.",
+    "domains": [
+      {
+        "name": "OCEAN.Agreeableness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q048",
+    "text": "I prefer cooperation over competition.",
+    "domains": [
+      {
+        "name": "OCEAN.Agreeableness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q049",
+    "text": "I find it easy to forgive people\u2019s mistakes.",
+    "domains": [
+      {
+        "name": "OCEAN.Agreeableness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q050",
+    "text": "I enjoy doing favors for friends or family.",
+    "domains": [
+      {
+        "name": "OCEAN.Agreeableness",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q051",
+    "text": "I often feel anxious or worried.",
+    "domains": [
+      {
+        "name": "OCEAN.Neuroticism",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q052",
+    "text": "I get upset easily by small problems.",
+    "domains": [
+      {
+        "name": "OCEAN.Neuroticism",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q053",
+    "text": "I find it hard to relax after a stressful event.",
+    "domains": [
+      {
+        "name": "OCEAN.Neuroticism",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q054",
+    "text": "I frequently dwell on my mistakes.",
+    "domains": [
+      {
+        "name": "OCEAN.Neuroticism",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q055",
+    "text": "I feel overwhelmed when I have too much to do.",
+    "domains": [
+      {
+        "name": "OCEAN.Neuroticism",
+        "weight": 1
+      }
+    ],
+    "responseType": "likert-5",
+    "weight": 1
+  },
+  {
+    "id": "Q056",
+    "text": "Which number completes the series: 2, 4, 8, 16, __?",
+    "domains": [
+      {
+        "name": "Aptitude.Logical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q057",
+    "text": "All roses are flowers. Some flowers fade quickly. Therefore, some roses fade quickly. Is the conclusion valid?",
+    "domains": [
+      {
+        "name": "Aptitude.Logical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q058",
+    "text": "If A>B and B=C, then A?C. Choose: (> , = , <)",
+    "domains": [
+      {
+        "name": "Aptitude.Logical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q059",
+    "text": "Find the pattern: \ud83d\udfe6\u2b1c\ud83d\udfe6\u2b1c__ (next shape).",
+    "domains": [
+      {
+        "name": "Aptitude.Logical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q060",
+    "text": "Which word does NOT belong: Apple, Banana, Carrot, Cherry?",
+    "domains": [
+      {
+        "name": "Aptitude.Logical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q061",
+    "text": "Select the synonym for \u2018EFFICIENT\u2019: (A) Wasteful (B) Productive (C) Indifferent (D) Vigorous",
+    "domains": [
+      {
+        "name": "Aptitude.Verbal",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q062",
+    "text": "Which sentence is grammatically correct? A. He don\u2019t like music. B. He doesn\u2019t likes music. C. He doesn\u2019t like music. D. He not like music.",
+    "domains": [
+      {
+        "name": "Aptitude.Verbal",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q063",
+    "text": "Fill in the blank: She has lived here ___ five years. A. since B. for C. from D. during",
+    "domains": [
+      {
+        "name": "Aptitude.Verbal",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q064",
+    "text": "Choose the antonym of \u2018ABUNDANT\u2019: (A) Scarce (B) Plentiful (C) Lavish (D) Bountiful",
+    "domains": [
+      {
+        "name": "Aptitude.Verbal",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q065",
+    "text": "What is 15% of 200?",
+    "domains": [
+      {
+        "name": "Aptitude.Numerical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q066",
+    "text": "If 3x + 5 = 20, what is x?",
+    "domains": [
+      {
+        "name": "Aptitude.Numerical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q067",
+    "text": "A car travels 60 km in 1.5 hours. What is its average speed?",
+    "domains": [
+      {
+        "name": "Aptitude.Numerical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q068",
+    "text": "Calculate: (25 \u00d7 4) \u00f7 (5 \u2013 2).",
+    "domains": [
+      {
+        "name": "Aptitude.Numerical",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q069",
+    "text": "Which view is the top view of this object? [diagram options]",
+    "domains": [
+      {
+        "name": "Aptitude.Spatial",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q070",
+    "text": "Rotate the letter \u2018L\u2019 90\u00b0 clockwise. Which shape matches?",
+    "domains": [
+      {
+        "name": "Aptitude.Spatial",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q071",
+    "text": "Find the mirror image of the figure: \u25b2\u25b6 (options)",
+    "domains": [
+      {
+        "name": "Aptitude.Spatial",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  },
+  {
+    "id": "Q072",
+    "text": "Identify the folded shape from this net diagram. [options]",
+    "domains": [
+      {
+        "name": "Aptitude.Spatial",
+        "weight": 1
+      }
+    ],
+    "responseType": "mcq",
+    "weight": 1
+  }
+]

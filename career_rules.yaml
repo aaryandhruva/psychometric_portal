@@ -1,0 +1,11 @@
+EngineeringAndTechnology:
+  RIASEC.Investigative: 70
+  OCEAN.Openness: 60
+
+ArtsAndDesign:
+  RIASEC.Artistic: 65
+  OCEAN.Openness: 70
+
+SocialServices:
+  RIASEC.Social: 60
+  OCEAN.Agreeableness: 65
