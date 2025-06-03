@@ -1,2 +1,4 @@
 streamlit
 pyyaml
+gspread
+oauth2client
