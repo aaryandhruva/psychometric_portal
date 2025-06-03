@@ -1,77 +1,98 @@
 import streamlit as st
-import json
 import yaml
-import os
+import json
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
-# Load data
+st.set_page_config(page_title="Psychometric Assessment Portal", layout="wide")
+
+st.title("🧠 Psychometric Assessment Portal")
+st.markdown("Please answer the following questions honestly.")
+
+# Load question bank
 @st.cache_data
 def load_question_bank():
     with open("question_bank.json", "r") as f:
         return json.load(f)
 
-@st.cache_data
-def load_rules():
+question_bank = load_question_bank()
+
+# Load career rules
+def load_career_rules():
     with open("career_rules.yaml", "r") as f:
         return yaml.safe_load(f)
 
-from scoring import calculate_scores
-from mapping import match_clusters
+career_rules = load_career_rules()
 
-question_bank = load_question_bank()
-rules = load_rules()
+# Connect to Google Sheets
+def connect_to_sheet():
+    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gcp_service_account"], scope)
+    client = gspread.authorize(creds)
+    return client.open("PsychometricResponses").worksheet("Responses")
 
-st.title("🧠 Psychometric Assessment")
-
-st.markdown("### Please answer all questions:")
-
+# Collect user input
+st.subheader("Questions")
 user_response = {}
-
 for q in question_bank:
-    qid = q["id"]
-    qtext = q["text"]
-    rtype = q["responseType"]
+    user_response[q["id"]] = st.selectbox(
+        q["text"],
+        options=["1 - Strongly Disagree", "2 - Disagree", "3 - Neutral", "4 - Agree", "5 - Strongly Agree"],
+        index=2,
+        key=q["id"]
+    )
 
-    if rtype == "likert-5":
-        response = st.selectbox(
-            f"{qid}: {qtext}",
-            options=[1, 2, 3, 4, 5],
-            format_func=lambda x: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"][x - 1],
-            key=qid
-        )
-        user_response[qid] = response
-
-    elif rtype == "mcq":
-        response = st.text_input(f"{qid} (MCQ): {qtext}", key=qid)
-        user_response[qid] = response  # You can convert these to 1/0 if needed
-
-# Button
+# Submit button
 if st.button("Submit"):
-    # Save user input to file
-    response_record = {
-        "timestamp": datetime.now().isoformat(),
-        "responses": user_response
-    }
+    # Convert response to numeric scale
+    numeric_responses = {qid: int(ans[0]) for qid, ans in user_response.items()}
 
-    if os.path.exists("user_responses.json"):
-        with open("user_responses.json", "r") as f:
-            existing = json.load(f)
+    # Calculate scores per domain
+    domain_scores = {}
+    for q in question_bank:
+        qid = q["id"]
+        score = numeric_responses[qid] * q.get("weight", 1)
+        for domain in q["domains"]:
+            name = domain["name"]
+            weight = domain.get("weight", 1)
+            domain_scores[name] = domain_scores.get(name, 0) + score * weight
+
+    # Normalize scores (optional)
+    max_score_per_domain = 5 * sum(
+        q.get("weight", 1) * d.get("weight", 1)
+        for q in question_bank
+        for d in q["domains"] if d["name"] == q["domains"][0]["name"]
+    )
+    normalized_scores = {k: round(v / max_score_per_domain * 100, 2) for k, v in domain_scores.items()}
+
+    # Match career clusters
+    matched_clusters = []
+    for cluster, rule in career_rules.items():
+        min_score = rule.get("min_score", 0)
+        domains = rule.get("domains", [])
+        avg = sum([normalized_scores.get(d, 0) for d in domains]) / len(domains)
+        if avg >= min_score:
+            matched_clusters.append((cluster, avg))
+
+    matched_clusters.sort(key=lambda x: x[1], reverse=True)
+
+    # Show results
+    st.subheader("Your Scores")
+    st.json(normalized_scores)
+
+    st.subheader("Recommended Career Clusters")
+    if matched_clusters:
+        for cluster, score in matched_clusters:
+            st.markdown(f"**{cluster}**: {score:.2f}% match")
     else:
-        existing = []
+        st.warning("No matching career cluster found. Try retaking with different answers.")
 
-    existing.append(response_record)
-
-    with open("user_responses.json", "w") as f:
-        json.dump(existing, f, indent=2)
-
-    # Score + Match
-    scores = calculate_scores(question_bank, user_response)
-    matches = match_clusters(scores, rules)
-
-    # Output
-    st.subheader("Normalized Scores:")
-    st.json(scores)
-
-    st.subheader("Career Cluster Matches:")
-    for cluster, score in matches:
-        st.markdown(f"**{cluster}** → {score}%")
+    # Log to Google Sheets
+    try:
+        sheet = connect_to_sheet()
+        row = [datetime.now().isoformat()] + [numeric_responses[q["id"]] for q in question_bank]
+        sheet.append_row(row)
+        st.success("Response logged to Google Sheets successfully!")
+    except Exception as e:
+        st.error(f"Logging failed: {e}")
